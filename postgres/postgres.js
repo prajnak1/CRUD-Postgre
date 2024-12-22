@@ -9,7 +9,7 @@ const sequelize = new Sequelize('postgres', 'postgres', 'Riku1234()', {
     host: 'localhost',
     dialect:  'postgres' 
   });
-
+//connection with PostgreSQL database
   let UserModel = null;
   const connection = async() =>{
     try {
