@@ -1,7 +1,7 @@
 import express from "express";
 import {getAllEmp, addEmp, updateEmp, deleteEmp} from "../controller/userController.js"
 const router = express.Router();
-
+//routing
 router.get("/getAll",getAllEmp);
 router.post("/addEmp",addEmp);
 router.put("/emp/:empId", updateEmp);
