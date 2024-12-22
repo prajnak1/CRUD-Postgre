@@ -1,6 +1,6 @@
 import { UserModel } from "../postgres/postgres.js"
-//predefined methods
-//get
+//CRUD Operations
+//get (READ)
 export const getAllEmp = async(req,res) =>{
     try{
         const users= await UserModel.findAll();
@@ -15,7 +15,7 @@ export const getAllEmp = async(req,res) =>{
 
 }
 }
-//post
+//post 
 export const addEmp = async(req,res) =>{
     const {name, email, designation,empId}   = req.body;
     try{
@@ -31,7 +31,7 @@ export const addEmp = async(req,res) =>{
     
     }
 }
-//Put
+//PUT
 //Handle cases when you can't find the data
 export const updateEmp = async(req,res) =>{
     let empId = req.params.empId;
@@ -48,7 +48,7 @@ return res.status(200).json({message:"updated successfully"})
         return res.status(500).json({"error":"internal server error"})
     }
 }
-
+//Delete
 export const deleteEmp = async (req, res) =>{
     let empId = req.params.empId;
     try{
